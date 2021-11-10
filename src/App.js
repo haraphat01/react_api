@@ -1,13 +1,41 @@
 import React from "react";
 import "./App.css";
 
+class Friends extends React.Component {
+  render() {
+    return (
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Since</th>
+          </tr>
+        </thead>
+        <tbody>
+          {this.props.friends &&
+            this.props.friends.map((friend) => {
+              return (
+                <tr>
+                  <td>{friend._id}</td>
+                  <td>{friend.name}</td>
+                  <td>{friend.since}</td>
+                </tr>
+              );
+            })}
+        </tbody>
+      </table>
+    );
+  }
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       friends: [],
       name: "",
-      id: "",
+      _id: "",
       notes: "",
     };
 
@@ -165,10 +193,11 @@ class App extends React.Component {
                 Delete
               </button>
             </form>
+            <Friends friends={this.state.friends} />
           </div>
         </div>
       </div>
     );
   }
 }
-export default App;
+export default {App, Friends};
