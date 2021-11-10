@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+const API_KEY = process.env.REACT_APP_API_KEY
 
 class Friends extends React.Component {
   render() {
@@ -58,7 +59,7 @@ class App extends React.Component {
       headers: {
         "content-type": "application/json",
         "x-rapidapi-host": "fairestdb.p.rapidapi.com",
-        "x-rapidapi-key": "3210318a33msh7c337629a438611p19320cjsn54be7e372f99",
+        "x-rapidapi-key": API_KEY,
       },
       body: JSON.stringify({
         name: this.state.name,
@@ -83,7 +84,7 @@ class App extends React.Component {
       headers: {
         "content-type": "application/json",
         "x-rapidapi-host": "fairestdb.p.rapidapi.com",
-        "x-rapidapi-key": "3210318a33msh7c337629a438611p19320cjsn54be7e372f99",
+        "x-rapidapi-key": API_KEY,
       },
       body: JSON.stringify({
         _id: this.state.id,
@@ -111,7 +112,7 @@ class App extends React.Component {
         headers: {
           "x-rapidapi-host": "fairestdb.p.rapidapi.com",
           "x-rapidapi-key":
-            "3210318a33msh7c337629a438611p19320cjsn54be7e372f99",
+          API_KEY,
         },
       }
     )
