@@ -200,4 +200,4 @@ class App extends React.Component {
     );
   }
 }
-export default {App, Friends};
+export default App;
